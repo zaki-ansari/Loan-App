@@ -122,8 +122,14 @@ export class DisplayschedulesComponent implements OnInit,AfterViewInit {
   
 
   onPay(obj:any){
-    if(obj.paymentStatus=="AWAITINGPAYMENT"){
-      alert("Do you want to pay "+ obj.paymentAmount);
+    if(obj.paymentStatus=="AWAITINGPAYMENT" && obj.paymentDate==this.datePipeString){
+
+      if(confirm("Do you want to pay "+ obj.paymentAmount)){
+        this.toastr.success("Payment of "+obj.paymentAmount+" of schedule Id "+obj.paymentScheduleId+" and loanId of "+this.loanId+" is succesfull");
+      }else{
+        this.toastr.warning("payment is cancelled");
+        return;
+      }
       console.log(obj);
     this.bd= (+this.bd)+1;
     console.log(this.bd);
@@ -133,7 +139,7 @@ export class DisplayschedulesComponent implements OnInit,AfterViewInit {
       console.log(response);
       this.GetDataFromUrl();
     })
-    this.toastr.success("Payment of "+obj.paymentAmount+" of schedule Id "+obj.paymentScheduleId+" and loanId of "+this.loanId+" is succesfull");
+    
     
     }else{
 
