@@ -1,4 +1,4 @@
-## Loan-App
+### Loan-App
 ## ER Diagram for the application
 
 ![Capture](https://user-images.githubusercontent.com/99637633/196092043-a1675f40-9e0f-4ae9-9d11-1242d0470044.PNG)
@@ -124,7 +124,7 @@
 }
 ```
 
-## Frondend-UI
+### Frondend-UI
 # GetStartPage
 ![GetStartPage](https://user-images.githubusercontent.com/99637633/196093747-6880ae20-82a0-4576-a6a4-83f3a3da639c.PNG)
 * click on getstart button to navigate to home page
@@ -139,12 +139,12 @@
 ![CreateLoanPage](https://user-images.githubusercontent.com/99637633/196094084-4e7eb800-fb95-4066-9799-04eaf0f1d873.PNG)
 * create a loan by filling the details in the form by giving proper details
 
-#AllLoanPage
+# AllLoanPage
 ![AllLoansPage](https://user-images.githubusercontent.com/99637633/196094193-5ade94a8-369b-49af-8024-c521fc7a5a3f.PNG)
 * all loans are displayed here in all loan page
 * click on particular loan to navigate to payment schedule display page
 
-#PaymentSchedulePage
+# PaymentSchedulePage
 ![PaymentSchedulePage](https://user-images.githubusercontent.com/99637633/196094384-750c3e9f-c61e-42c1-9d01-71fad4fb61bc.PNG)
 * If the maturity date is arrived then the status will be change to awaitingpayment
 * On the maturity date, we can pay the amount and status will be change to paid
