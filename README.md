@@ -54,12 +54,12 @@
 ### PaymentSchedule Module
 
 * `GET /paymentSchedule/{Id}` : creating a new loan
-* `POST /paymentSchedule/updatestatus` : update particular paymentschedule status to paid status
-* `POST /paymentSchedule/updatestatustoawaiting` : update particular paymentschedule status to awaitingpayment status
+* `PUT /paymentSchedule/updatestatus` : update particular paymentschedule status to paid status
+* `PUT /paymentSchedule/updatestatustoawaiting` : update particular paymentschedule status to awaitingpayment status
 
 ### Sample API Response for Customer Login
 
-`POST   localhost:8009/login/customer`
+`POST   localhost:8080/loan/save`
 
 * Request Body
 
