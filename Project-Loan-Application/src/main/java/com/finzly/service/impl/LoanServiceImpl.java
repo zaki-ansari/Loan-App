@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.finzly.entity.Loan;
 import com.finzly.entity.PaymentSchedule;
+import com.finzly.exception.ResourceNotFoundException;
 import com.finzly.payload.LoanDto;
 import com.finzly.payload.PaymentFrequency;
 import com.finzly.payload.PaymentStatus;
@@ -27,14 +28,16 @@ public class LoanServiceImpl implements LoanService{
 	
 	public static final int Start_Days=10;
 	@Override
-	public Loan saveLoan(LoanDto loanDto) {
+	public Loan saveLoan(LoanDto loanDto) throws ResourceNotFoundException{
 		Loan loan = this.loanDtoToLoan(loanDto);
-		List<PaymentSchedule> schedules;
+		List<PaymentSchedule> schedules = null;
 		if(loanDto.getPaymentTerm().equals("Even Principal")) {
 			schedules = this.EvenPrincipalPayment(loanDto);
 		}
-		else {
+		else if(loanDto.getPaymentTerm().equals("Interest Only")){
 			schedules = this.InterestOnlyPayment(loanDto);
+		}else {
+			throw new ResourceNotFoundException("PaymentTerm is wrong");
 		}
 		loan.setPaymentSchedule(schedules);
 		Loan savedLoan = this.loanRepo.save(loan);

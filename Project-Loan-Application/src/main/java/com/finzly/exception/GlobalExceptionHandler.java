@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<Error>(er, HttpStatus.BAD_REQUEST);
 	}
 	
-	
+	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Error> myExcHandler(Exception e, WebRequest wr){
 		Error err=new Error(e.getMessage(), wr.getDescription(false));
 		

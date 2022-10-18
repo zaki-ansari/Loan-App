@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.finzly.entity.Loan;
 import com.finzly.entity.PaymentSchedule;
+import com.finzly.exception.ResourceNotFoundException;
 import com.finzly.payload.LoanDto;
 import com.finzly.payload.PaymentFrequency;
 import com.finzly.payload.PaymentStatus;
@@ -133,7 +134,7 @@ public List<PaymentSchedule> EvenPrincipalPayment(LoanDto loanDto) {
 	
 
 @Override
-public PaymentSchedule updatePaymentScheduleStatus(PaymentSchedule paymentSchedule) {
+public PaymentSchedule updatePaymentScheduleStatus(PaymentSchedule paymentSchedule) throws ResourceNotFoundException{
 	
 //	PaymentSchedule paymentSchedule = new PaymentSchedule();
 //	paymentSchedule.setPaymentScheduleId(paymentScheduleObj.getPaymentScheduleId());
@@ -147,7 +148,7 @@ public PaymentSchedule updatePaymentScheduleStatus(PaymentSchedule paymentSchedu
 
 
 @Override
-public PaymentSchedule updatePaymentScheduleStatusToAwaiting(PaymentSchedule paymentSchedule) {
+public PaymentSchedule updatePaymentScheduleStatusToAwaiting(PaymentSchedule paymentSchedule) throws ResourceNotFoundException{
 
 	PaymentSchedule paymentSchedule2 = this.paymentScheduleRepo.findById(paymentSchedule.getPaymentScheduleId()).get();
 	
