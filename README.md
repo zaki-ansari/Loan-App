@@ -146,9 +146,10 @@
 
 ## PaymentSchedulePage
 ![PaymentSchedulePage](https://user-images.githubusercontent.com/99637633/196094384-750c3e9f-c61e-42c1-9d01-71fad4fb61bc.PNG)
-* If the maturity date is arrived then the status will be change to awaitingpayment
 * On the maturity date, we can pay the amount and status will be change to paid
 * If you click on pay button before maturity date, an alert message will be displayed
 
-
+### Changing Status to Awaiting Payment
+![ChangingStatusToAwaitingPayment](https://user-images.githubusercontent.com/99637633/196575403-f7e82a16-d6c2-4801-b549-233759e9da11.PNG)
+* If the maturity date is arrived then the status will be change to awaitingpayment
 
