@@ -7,13 +7,13 @@
                 <h2 style="text-align:center;margin-top: 50px;">Loans List</h2>
                 <table class="table table-bordered">
                     <thead>
-                      <th>CustomerId</th>
-                      <th>Principal</th>
-                      <th>Interest Rate</th>
+                      <th># CustomerId</th>
+                      <th>Principal(&#8377;)</th>
+                      <th>Interest Rate (%)</th>
                       <th>Loan Trade Date</th>
                       <th>Loan Start Date</th>
                       <th>Loan Maturity Date</th>
-                      <th>Payment Frequency</th>
+                      <th>Payment Frequency (months)</th>
                     </thead>
                     <tbody>
                       <tr *ngFor="let item of allLoans | paginate: { itemsPerPage: 12, currentPage: p }"(mouseover)="onMouseOver(item)"

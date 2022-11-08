@@ -4,12 +4,16 @@ import { CreateloanComponent } from './createloan/createloan.component';
 import { DisplayloansComponent } from './displayloans/displayloans.component';
 import { DisplayschedulesComponent } from './displayschedules/displayschedules.component';
 import { HomeComponent } from './home/home.component';
+import { HomescreenComponent } from './homescreen/homescreen.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   {
-    path:"",redirectTo:"/login",pathMatch:"full"
+    path:"",redirectTo:"/homescreen",pathMatch:"full"
+  },
+  {
+    path:"homescreen",component:HomescreenComponent
   },
   {
     path:"login",component:LoginComponent

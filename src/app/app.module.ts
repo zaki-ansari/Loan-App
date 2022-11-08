@@ -18,6 +18,9 @@ import { DisplayloansComponent } from './displayloans/displayloans.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DatePipe } from '@angular/common';
+import { HomescreenComponent } from './homescreen/homescreen.component';
+import { MatDialogSignupComponent } from './mat-dialog-signup/mat-dialog-signup.component';
+import { MatDialogSigninComponent } from './mat-dialog-signin/mat-dialog-signin.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     CreateloanComponent,
     DisplayschedulesComponent,
-    DisplayloansComponent
+    DisplayloansComponent,
+    HomescreenComponent,
+    MatDialogSignupComponent,
+    MatDialogSigninComponent
   ],
   imports: [
     BrowserModule,

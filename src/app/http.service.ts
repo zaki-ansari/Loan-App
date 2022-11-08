@@ -38,4 +38,14 @@ export class HttpService {
   updateParticularScheduleStatusToAwaiting(obj:any){
     return (this.http.put(`${this.baseUrl}/paymentSchedule/updatestatustoawaiting`,obj));
   }
+
+  createUserSignUp(obj:any){
+    return (this.http.post(`${this.baseUrl}/userSignUp/create`,obj));
+  }
+
+  loginUserSignIn(obj:any){
+   return (this.http.post(`${this.baseUrl}/userSignIn/login`,obj));
+  }
+
+  
 }

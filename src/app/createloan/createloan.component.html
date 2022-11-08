@@ -14,11 +14,11 @@
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
                 <mat-label>Loan Amount</mat-label>
                 <input matInput type="number" placeholder="Enter the Loan Amount"
-                #loanamt="ngModel" ngModel min="1000" max="10000000"
+                #loanamt="ngModel" ngModel min="1000"  max="10000000" 
                 name="loanamount" id="loanamount"
                   required  >
                 
-                <mat-error *ngIf="loanamt.touched && !loanamt.valid"> ** Please Enter the Loan Amount</mat-error>
+                <mat-error *ngIf="loanamt.touched && !loanamt.valid"> ** Please Enter the Loan Amount between 1thousand and 10crores</mat-error>
            </mat-form-field>
   
             
@@ -36,7 +36,7 @@
           <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
             <mat-label>Loan Term</mat-label>
             <input matInput type="number" placeholder="Enter Loan Term in Years"
-            #loanterm="ngModel" ngModel min="1" max="4"
+            #loanterm="ngModel" ngModel min="1" max="4" step="0.5"
             name="loanterm" id="loanterm"
               required  >
             
@@ -58,7 +58,7 @@
                 <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
                   <mat-label>Interest Rate</mat-label>
                   <input matInput type="number" placeholder="Enter the Interest Rate in percentage"
-                  #intrate="ngModel" ngModel min="0"
+                  #intrate="ngModel" ngModel min="0" max="100"
                   name="interestrate" id="interestrate"
                     required  >
                   

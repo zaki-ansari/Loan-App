@@ -1,0 +1,28 @@
+<div class="container" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col">
+            <h5 for="">SIGN UP</h5>&nbsp;
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                
+                <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="Enter the Email"
+                        #email="ngModel" ngModel name="email" required>
+
+                        <mat-error *ngIf="email.touched && !email.valid"> ** Please Enter the Email</mat-error>    
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Enter the Password"
+                        #password="ngModel" ngModel name="password" required>
+
+                        <mat-error *ngIf="password.touched && !password.valid"> ** Please Enter the Password</mat-error>    
+                </mat-form-field>
+
+                <button mat-raised-button color="accent" [disabled]="!f.valid">SIGN UP</button>&nbsp;&nbsp;
+            </form>
+        </div>
+
+    </div>
+</div>
