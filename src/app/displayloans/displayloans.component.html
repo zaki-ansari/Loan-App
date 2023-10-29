@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <app-header></app-header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 style="text-align:center;margin-top: 50px;">Loans List</h2>
+                <table class="table table-bordered">
+                    <thead>
+                      <th># CustomerId</th>
+                      <th>Principal(&#8377;)</th>
+                      <th>Interest Rate (%)</th>
+                      <th>Loan Trade Date</th>
+                      <th>Loan Start Date</th>
+                      <th>Loan Maturity Date</th>
+                      <th>Payment Frequency (months)</th>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of allLoans | paginate: { itemsPerPage: 12, currentPage: p }"(mouseover)="onMouseOver(item)"
+                      [class.highlight]="selected===item.customerId" (mouseout)="onMouseOut()" (click)="OnClickSchedule(item)">
+                        <td>{{item.customerId}}</td>
+                        <td> {{item.loanAmount}}</td>
+                        <td>{{item.interestRate}}</td>
+                        <td>{{item.tradeDate}}</td>
+                        <td>{{item.loanStartDate}}</td>
+                        <td #date>{{item.maturityDate}}</td>
+                        <td>{{item.paymentFrequency}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <pagination-controls (pageChange)="p = $event"
+                      style="float:right ;"
+                    ></pagination-controls>
+                    <br>
+                    <button routerLink="/home" class="btn btn-info">Back</button>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</div>
+

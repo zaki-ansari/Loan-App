@@ -1,0 +1,34 @@
+
+<div class="row" style="margin-top: 10px">
+    <div class="col">
+      <nav class="navbar navbar-expand-md navbar-dark bg-info" >
+  
+        <a class="navbar-brand" style="color: white;" routerLink="/home" (click)="onBack()">
+          Loan-App</a>
+  
+        <div class="collapse navbar-collapse">
+          <div style="margin-left:auto" class="navbar-nav">
+           
+            &nbsp;
+            <span  class="nav-item nav-link"
+              style="font-weight: bold; color: whitesmoke"
+              >Hi Welcome</span
+            >&nbsp;
+            <a (click)="onLogout(popUp)"
+              style="cursor: pointer; font-weight: bold; color: whitesmoke"
+              class="nav-item nav-link"
+              >LogOut</a >
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <ng-template #popUp>
+    <h4 style="text-align: center;">Are you sure, Want to LogOut?</h4><br>
+    <div style="display: flex;justify-content: space-around;">
+      <button routerLink="/homescreen" (click)="modalRef.hide()" class="btn btn-warning">Yes</button>
+      <button (click)="modalRef.hide()" class="btn btn-danger">No</button>
+    </div>
+   <br>
+</ng-template>

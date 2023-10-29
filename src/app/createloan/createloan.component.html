@@ -1,0 +1,78 @@
+
+<div class="container-fluid">
+    <app-header></app-header>
+</div>
+
+
+<br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>Create Loan</h2><br>
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+  
+            <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
+                <mat-label>Loan Amount</mat-label>
+                <input matInput type="number" placeholder="Enter the Loan Amount"
+                #loanamt="ngModel" ngModel min="1000"  max="10000000" 
+                name="loanamount" id="loanamount"
+                  required  >
+                
+                <mat-error *ngIf="loanamt.touched && !loanamt.valid"> ** Please Enter the Loan Amount between 1thousand and 10crores</mat-error>
+           </mat-form-field>
+  
+            
+           <mat-form-field class="myclass">
+            <mat-label>Payment Term</mat-label>
+            <mat-select required #payterm="ngModel" name="payterm" ngModel id="payterm">
+                <mat-option>---</mat-option>
+                <mat-option *ngFor="let item of paymentTerms" [value]="item">
+                  {{item}}
+                </mat-option>
+        
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
+            <mat-label>Loan Term</mat-label>
+            <input matInput type="number" placeholder="Enter Loan Term in Years"
+            #loanterm="ngModel" ngModel min="1" max="4" step="0.5"
+            name="loanterm" id="loanterm"
+              required  >
+            
+            <mat-error *ngIf="loanterm.touched && !loanterm.valid"> ** Please Enter the Loan Term from 1 to 4 years</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="myclass">
+        <mat-label>Payment Frequency</mat-label>
+        <mat-select required #paymentfrequency="ngModel" name="paymentfrequency" ngModel id="paymentfrequency">
+            <mat-option>---</mat-option>
+            <mat-option *ngFor="let item of paymentFrequencies" [value]="item">
+              {{item}}
+            </mat-option>
+    
+        </mat-select>
+      </mat-form-field>
+  
+                <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
+                  <mat-label>Interest Rate</mat-label>
+                  <input matInput type="number" placeholder="Enter the Interest Rate in percentage"
+                  #intrate="ngModel" ngModel min="0" max="100"
+                  name="interestrate" id="interestrate"
+                    required  >
+                  
+                  <mat-error *ngIf="intrate.touched && !intrate.valid"> ** Please Enter the Interest Rate</mat-error>
+            </mat-form-field>
+    
+        
+            <button mat-raised-button color="accent" [disabled]="!f.valid">Submit</button>
+  
+          </form>
+
+         
+        </div>
+  
+      </div>
+  
+    </div>

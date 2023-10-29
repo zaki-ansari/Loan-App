@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <app-header></app-header>
+    <div>
+      <h2 style="text-align:center;margin-top: 50px;">Schedules List</h2>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <th># ScheduleId</th>
+          <th>Principal(&#8377;)</th>
+          <th>Interest(&#8377;)</th>
+          <th>Status</th>
+          <th>PaymentAmount(&#8377;)</th>
+          <th>PaymentDate</th>
+          <th>Payment</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of allSchedules | paginate: { itemsPerPage: 12, currentPage: p }; index as i">
+            <td>{{item.paymentScheduleId}}</td>
+            <td> {{item.principal}}</td>
+            <td>{{item.projectedInterest}}</td>
+            <td><span [ngClass]="{
+              'badge':true,
+              'badge-pill':true,
+              'badge-secondary':item.paymentStatus.toLowerCase()=== 'projected',
+              'badge-warning':item.paymentStatus.toLowerCase()==='awaitingpayment',
+              'badge-success':item.paymentStatus.toLowerCase()==='paid'
+          }"
+              style="padding: 10px;" >{{item.paymentStatus}}</span></td>
+            <td>{{item.paymentAmount}}</td>
+            <td>{{item.paymentDate}}</td>
+            <td><button class="btn btn-success" (click)="onPay(item)" [disabled]="bd!=i" [hidden]=" !(item.paymentStatus=='PAID' || item.paymentStatus=='PROJECTED')">Pay</button>
+                <button class="btn btn-success" (click)="onPay(item)" [disabled]="bd!=i" [hidden]="!(item.paymentStatus=='AWAITINGPAYMENT' && item.paymentStatus!='PAID' && item.paymentStatus!='PROJECTED')">Pay &#8377; {{item.paymentAmount}}</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+      <pagination-controls (pageChange)="p = $event"
+          style="float:right ;"
+        ></pagination-controls>
+
+        <button routerLink="/displayloans" class="btn btn-info" (click)="onBack()">Back</button>
+</div>
+
+
+

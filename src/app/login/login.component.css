@@ -1,0 +1,41 @@
+.bg {
+    background-color: #17a2b8;
+    height: 250px;
+  }
+  
+  svg {
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    top: 150px;
+    right: 4px;
+  }
+  
+  .text {
+    text-align: center;
+    color: whitesmoke;
+  }
+  
+  ::-webkit-input-placeholder {
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 750px;
+    bottom: 20px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  .startbtn{
+    cursor: pointer;
+    background: white;
+    
+  }
+  
+ 
+  
+  
